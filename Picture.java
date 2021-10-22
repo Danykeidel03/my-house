@@ -52,7 +52,6 @@ public class Picture
         sun = new Circle();
         sun.changeColor("yellow");
         sun.moveHorizontal(100);
-        sun.moveVertical(-40);
         sun.changeSize(80);
         sun.makeVisible();
         
@@ -63,8 +62,21 @@ public class Picture
         suelo.changeSize(1000);
         suelo.makeVisible();
         
+        sun.moveVertical(100);
+        sun.slowMoveVertical(-150);
+        
     }
-
+    /**
+     * Atardecer
+     */
+    public void atardecer()
+    {
+        if (wall != null)   // only if it's painted already...
+        {
+            sun.moveVertical(-10);
+        sun.slowMoveVertical(150);
+        }
+    }
     /**
      * Change this picture to black/white display
      */
